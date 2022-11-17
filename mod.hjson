@@ -1,13 +1,9 @@
-#the mod name as displayed in-game
-displayName: "sus"
+displayName: "Testjmod"
 
-#the internal name of your mod
 name: "testj"
 
-#your name
-author: "aaa"
+author: "susi"
 
-#the fully qualified main class of the mod
 main: "testj.Testjmod"
 
 #the mod description as seen in the mod dialog

@@ -1,4 +1,4 @@
-package testj.content;
+package testj;
 
 import arc.Core;
 import arc.Events;
@@ -7,8 +7,9 @@ import arc.util.Time;
 import mindustry.game.EventType;
 import mindustry.mod.Mod;
 import mindustry.ui.dialogs.BaseDialog;
+import testj.content.TestjmodBlocks;
 
-public class Testjmod extends Mod {
+public class Testjmod extends Mod{
 
     public Testjmod(){
         Log.info("Loaded Testjmod constructor.");
