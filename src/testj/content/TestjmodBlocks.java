@@ -24,7 +24,7 @@ public class TestjmodBlocks {
             {
                 size = 2;
                 health = 70 * wallHealthMultiplier * 4;
-                requirements(Category.defense, with(Items.copper, 8));
+                requirements(Category.defense, with(Items.copper, 32));
             }
         };
     }
