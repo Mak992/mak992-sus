@@ -38,13 +38,13 @@ public class TestjmodBlocks {
         };
         //enderegion; region turrets
                 venit = new ItemTurret("venit"){{
-                    requirements(Category.turret, with(Items.lead, 30, Items.graphite, 10));
+                    requirements(Category.turret, with(Items.lead, 50, Items.graphite, 30));
                     ammo(
                             Items.lead, new FlakBulletType(){{
                                 speed = 5;
                                 height = 9;
                                 width = 9;
-                                splashDamage = 12f;
+                                splashDamage = 10f;
                                 splashDamageRadius = 60f;
                                 backColor = Pal.plastaniumBack;
                                 frontColor = Pal.plastaniumFront;
@@ -55,7 +55,7 @@ public class TestjmodBlocks {
                                 speed = 4;
                                 height = 10;
                                 width = 10;
-                                splashDamage = 18f;
+                                splashDamage = 16f;
                                 splashDamageRadius = 42f;
                                 backColor = Pal.bulletYellowBack;
                                 frontColor = Pal.bulletYellow;
@@ -66,7 +66,7 @@ public class TestjmodBlocks {
                                 speed = 6;
                                 height = 10;
                                 width = 7;
-                                splashDamage = 28f;
+                                splashDamage = 26f;
                                 splashDamageRadius = 30f;
                                 backColor = Pal.bulletYellowBack;
                                 frontColor = Pal.bulletYellow;
@@ -79,7 +79,7 @@ public class TestjmodBlocks {
 
                     shoot = new ShootSpread();
                     shootY = 3f;
-                    reload = 100f;
+                    reload = 150f;
                     range = 110;
                     inaccuracy = 1f;
                     shootCone = 0.1f;
