@@ -44,7 +44,7 @@ public class TestjmodBlocks {
                                 speed = 5;
                                 height = 9;
                                 width = 9;
-                                splashDamage = 18f;
+                                splashDamage = 12f;
                                 splashDamageRadius = 60f;
                                 backColor = Pal.plastaniumBack;
                                 frontColor = Pal.plastaniumFront;
@@ -55,7 +55,7 @@ public class TestjmodBlocks {
                                 speed = 4;
                                 height = 10;
                                 width = 10;
-                                splashDamage = 28f;
+                                splashDamage = 18f;
                                 splashDamageRadius = 42f;
                                 backColor = Pal.bulletYellowBack;
                                 frontColor = Pal.bulletYellow;
@@ -66,7 +66,7 @@ public class TestjmodBlocks {
                                 speed = 6;
                                 height = 10;
                                 width = 7;
-                                splashDamage = 40f;
+                                splashDamage = 28f;
                                 splashDamageRadius = 30f;
                                 backColor = Pal.bulletYellowBack;
                                 frontColor = Pal.bulletYellow;
