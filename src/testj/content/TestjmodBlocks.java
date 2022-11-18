@@ -13,7 +13,7 @@ public class TestjmodBlocks {
             testWall, testWallLarge;
 
     public static void load() {
-        wallHealthMultiplier = 4;
+        int wallHealthMultiplier = 4;
         testWall = new Wall("testWall") {
             {
                 size = 1;
@@ -28,4 +28,4 @@ public class TestjmodBlocks {
             }
         };
     }
-}
+};}}
