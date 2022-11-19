@@ -3,9 +3,12 @@ package testj.content;
 import arc.graphics.Color;
 import mindustry.content.Fx;
 import mindustry.content.Items;
+import mindustry.content.StatusEffects;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.*;
 import mindustry.entities.part.RegionPart;
+import mindustry.entities.pattern.ShootAlternate;
+import mindustry.entities.pattern.ShootBarrel;
 import mindustry.entities.pattern.ShootSpread;
 import mindustry.graphics.Pal;
 import mindustry.type.Category;
@@ -100,47 +103,47 @@ public class TestjmodBlocks {
                     limitRange();
                 }};
                         vitis = new ItemTurret("vitis"){{
-                            requirements(Category.turret, with( Items.graphite, 60, Items.titanium, 35));
+                            requirements(Category.turret, with( Items.graphite, 75, Items.titanium, 50));
                             ammo(
                                     graphite, new ArtilleryBulletType(){{
-                                        speed = 4;
+                                        speed = 3f;
                                         height = width = 9;
-                                        damage = 18;
-                                        splashDamage = 20f;
+                                        damage = 20;
+                                        splashDamage = 18f;
                                         splashDamageRadius = 65f;
-                                        status = new StatusEffect("burning");
-                                        statusDuration = 7f;
-                                        fragBullets = 5;
-                                        fragLifeMin = 0.1f;
                                         hitEffect = Fx.flakExplosionBig;
                                         collidesGround = true;
+                                        collidesAir = true;
                                     }},
                                     thorium, new ArtilleryBulletType(){{
-                                        speed = 5;
+                                        speed = 2.5f;
                                         height = width = 10;
-                                        damage = 24;
-                                        splashDamage = 28f;
+                                        damage = 28;
+                                        splashDamage = 22f;
                                         splashDamageRadius = 60f;
-                                        status = new StatusEffect("sapped");
-                                        statusDuration = 7f;
-                                        fragBullets = 5;
-                                        fragLifeMin = 0.1f;
                                         hitEffect = Fx.flakExplosionBig;
-                                        frontColor = Pal.sapBullet;
-                                        backColor = Pal.sapBulletBack;
                                         collidesGround = true;
+                                        collidesAir = true;
                                     }}
                             );
 
                             consumePower(3f);
 
-                            shoot = new ShootSpread();
-                            shootY = 6f;
-                            reload = 220f;
+                            shoot = new ShootAlternate(){{
+                                shots = 4;
+                                spread = 100f;
+                                shotDelay = 25f;
+                            }};
+                            shootY = 8f;
+                            ammoPerShot = 2;
+                            reload = 280f;
                             range = 180;
-                            inaccuracy = 5f;
-                            shootCone = 40f;
+                            targetGround = targetAir = true;
+                            inaccuracy = 30f;
+                            shootCone = 60f;
+                            shake = 0.4f;
                             ammoUseEffect = Fx.casing2;
+                            ammoEjectBack = 3f;
                             health = 900;
                             size = 2;
                             rotateSpeed = 6f;
@@ -149,9 +152,13 @@ public class TestjmodBlocks {
 
                             drawer = new DrawTurret(){{
                                 parts.add(new RegionPart("-side"){{
+                                    x = 5;
+                                    y = 5;
                                     progress = PartProgress.warmup;
                                     moveRot = -8f;
                                     mirror = true;
+                                    under = true;
+
                                     moves.add(new PartMove(PartProgress.recoil, 0, -2f, -10));
                                 }});
                             }};
