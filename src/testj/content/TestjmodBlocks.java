@@ -86,7 +86,7 @@ public class TestjmodBlocks {
                             }}
                     );
 
-                    consumePower(1f);
+                    consumePower(0.25f);
 
                     shoot = new ShootSpread();
                     shootY = 3f;
@@ -108,8 +108,8 @@ public class TestjmodBlocks {
                                     graphite, new ArtilleryBulletType(){{
                                         speed = 3f;
                                         height = width = 9;
-                                        damage = 20;
-                                        splashDamage = 18f;
+                                        damage = 26;
+                                        splashDamage = 22f;
                                         splashDamageRadius = 65f;
                                         hitEffect = Fx.flakExplosionBig;
                                         collidesGround = true;
@@ -118,16 +118,16 @@ public class TestjmodBlocks {
                                     thorium, new ArtilleryBulletType(){{
                                         speed = 2.5f;
                                         height = width = 10;
-                                        damage = 28;
-                                        splashDamage = 22f;
-                                        splashDamageRadius = 60f;
+                                        damage = 36;
+                                        splashDamage = 34f;
+                                        splashDamageRadius = 55f;
                                         hitEffect = Fx.flakExplosionBig;
                                         collidesGround = true;
                                         collidesAir = true;
                                     }}
                             );
 
-                            consumePower(3f);
+                            consumePower(0.5f);
 
                             shoot = new ShootAlternate(){{
                                 shots = 4;
@@ -141,12 +141,12 @@ public class TestjmodBlocks {
                             targetGround = targetAir = true;
                             inaccuracy = 30f;
                             shootCone = 60f;
-                            shake = 0.4f;
+                            shake = 0.8f;
                             ammoUseEffect = Fx.casing2;
-                            ammoEjectBack = 3f;
+                            ammoEjectBack = 4.5f;
                             health = 900;
                             size = 2;
-                            rotateSpeed = 6f;
+                            rotateSpeed = 3.5f;
                             coolant = consumeCoolant(0.12f);
                             researchCostMultiplier = 0.05f;
 
