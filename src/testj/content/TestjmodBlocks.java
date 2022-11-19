@@ -1,18 +1,12 @@
 package testj.content;
 
-import arc.graphics.Color;
 import mindustry.content.Fx;
 import mindustry.content.Items;
-import mindustry.content.StatusEffects;
 import mindustry.entities.bullet.*;
-import mindustry.entities.effect.*;
 import mindustry.entities.part.RegionPart;
-import mindustry.entities.pattern.ShootAlternate;
-import mindustry.entities.pattern.ShootBarrel;
-import mindustry.entities.pattern.ShootSpread;
+import mindustry.entities.pattern.*;
 import mindustry.graphics.Pal;
 import mindustry.type.Category;
-import mindustry.type.StatusEffect;
 import mindustry.world.Block;
 import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.defense.turrets.ItemTurret;
@@ -102,68 +96,67 @@ public class TestjmodBlocks {
 
                     limitRange();
                 }};
-                        vitis = new ItemTurret("vitis"){{
-                            requirements(Category.turret, with( Items.graphite, 75, Items.titanium, 50));
-                            ammo(
-                                    graphite, new ArtilleryBulletType(){{
-                                        speed = 3f;
-                                        height = width = 9;
-                                        damage = 26;
-                                        splashDamage = 22f;
-                                        splashDamageRadius = 65f;
-                                        hitEffect = Fx.flakExplosionBig;
-                                        collidesGround = true;
-                                        collidesAir = true;
-                                    }},
-                                    thorium, new ArtilleryBulletType(){{
-                                        speed = 2.5f;
-                                        height = width = 10;
-                                        damage = 36;
-                                        splashDamage = 34f;
-                                        splashDamageRadius = 55f;
-                                        hitEffect = Fx.flakExplosionBig;
-                                        collidesGround = true;
-                                        collidesAir = true;
-                                    }}
-                            );
+                vitis = new ItemTurret("vitis"){{
+                    requirements(Category.turret, with( Items.graphite, 75, Items.titanium, 50));
+                    ammo(
+                            graphite, new ArtilleryBulletType(){{
+                                speed = 3f;
+                                height = width = 9;
+                                damage = 26;
+                                splashDamage = 22f;
+                                splashDamageRadius = 65f;
+                                hitEffect = Fx.flakExplosionBig;
+                                collidesGround = true;
+                                collidesAir = true;
+                            }},
+                            thorium, new ArtilleryBulletType(){{
+                                speed = 2.5f;
+                                height = width = 10;
+                                damage = 36;
+                                splashDamage = 34f;
+                                splashDamageRadius = 55f;
+                                hitEffect = Fx.flakExplosionBig;
+                                collidesGround = true;
+                                collidesAir = true;
+                            }}
+                    );
 
-                            consumePower(0.5f);
+                    consumePower(0.5f);
 
-                            shoot = new ShootAlternate(){{
-                                shots = 4;
-                                spread = 100f;
-                                shotDelay = 25f;
-                            }};
-                            shootY = 8f;
-                            ammoPerShot = 2;
-                            reload = 280f;
-                            range = 180;
-                            targetGround = targetAir = true;
-                            inaccuracy = 30f;
-                            shootCone = 60f;
-                            shake = 0.8f;
-                            ammoUseEffect = Fx.casing2;
-                            ammoEjectBack = 4.5f;
-                            health = 900;
-                            size = 2;
-                            rotateSpeed = 3.5f;
-                            coolant = consumeCoolant(0.12f);
-                            researchCostMultiplier = 0.05f;
+                    shoot = new ShootBarrel(){{
+                        shots = 4;
+                        shotDelay = 25f;
+                    }};
+                    shootY = 8f;
+                    ammoPerShot = 2;
+                    reload = 280f;
+                    range = 180;
+                    targetGround = targetAir = true;
+                    inaccuracy = 30f;
+                    shootCone = 60f;
+                    shake = 0.8f;
+                    ammoUseEffect = Fx.casing2;
+                    ammoEjectBack = 4.5f;
+                    health = 900;
+                    size = 2;
+                    rotateSpeed = 3.5f;
+                    coolant = consumeCoolant(0.12f);
+                    researchCostMultiplier = 0.05f;
 
-                            drawer = new DrawTurret(){{
-                                parts.add(new RegionPart("-side"){{
-                                    x = 5;
-                                    y = 5;
-                                    progress = PartProgress.warmup;
-                                    moveRot = -8f;
-                                    mirror = true;
-                                    under = true;
+                    drawer = new DrawTurret(){{
+                        parts.add(new RegionPart("-side"){{
+                            x = 5;
+                            y = 5;
+                            progress = PartProgress.smoothReload;
+                            moveRot = -8f;
+                            mirror = true;
+                            under = true;
 
-                                    moves.add(new PartMove(PartProgress.recoil, 0, -2f, -10));
-                                }});
-                            }};
+                            moves.add(new PartMove(PartProgress.recoil, 0, -2f, -10));
+                        }});
+                    }};
 
-                            limitRange();
-                        }};
-    }
-};}}
+                    limitRange();
+                }};
+            }
+        };}}
