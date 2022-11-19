@@ -5,6 +5,7 @@ import mindustry.content.Items;
 import mindustry.entities.bullet.*;
 import mindustry.entities.part.RegionPart;
 import mindustry.entities.pattern.*;
+import mindustry.gen.Sounds;
 import mindustry.graphics.Pal;
 import mindustry.type.Category;
 import mindustry.world.Block;
@@ -102,9 +103,9 @@ public class TestjmodBlocks {
                             graphite, new ArtilleryBulletType(){{
                                 speed = 3f;
                                 height = width = 9;
-                                damage = 26;
-                                splashDamage = 22f;
-                                splashDamageRadius = 65f;
+                                damage = 18;
+                                splashDamage = 20f;
+                                splashDamageRadius = 70f;
                                 hitEffect = Fx.flakExplosionBig;
                                 collidesGround = true;
                                 collidesAir = true;
@@ -112,8 +113,8 @@ public class TestjmodBlocks {
                             thorium, new ArtilleryBulletType(){{
                                 speed = 2.5f;
                                 height = width = 10;
-                                damage = 36;
-                                splashDamage = 34f;
+                                damage = 24;
+                                splashDamage = 38f;
                                 splashDamageRadius = 55f;
                                 hitEffect = Fx.flakExplosionBig;
                                 collidesGround = true;
@@ -123,18 +124,21 @@ public class TestjmodBlocks {
 
                     consumePower(0.5f);
 
-                    shoot = new ShootBarrel(){{
-                        shots = 4;
-                        shotDelay = 25f;
+                    shoot = new ShootSine(){{
+                        scl = 20;
+                        mag = 15f;
+                        shots = 5;
+                        shotDelay = 7f;
                     }};
-                    shootY = 8f;
+                    shootY = 7f;
                     ammoPerShot = 2;
-                    reload = 280f;
+                    reload = 320f;
                     range = 180;
                     targetGround = targetAir = true;
-                    inaccuracy = 30f;
-                    shootCone = 60f;
+                    inaccuracy = 16f;
+                    shootCone = 30f;
                     shake = 0.8f;
+                    shootSound = Sounds.shootBig;
                     ammoUseEffect = Fx.casing2;
                     ammoEjectBack = 4.5f;
                     health = 900;
