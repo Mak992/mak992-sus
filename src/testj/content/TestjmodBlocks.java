@@ -54,6 +54,7 @@ public class TestjmodBlocks {
                                 backColor = Pal.plastaniumBack;
                                 frontColor = Pal.plastaniumFront;
                                 hitEffect = Fx.flakExplosionBig;
+                                shootSound = Sounds.swish;
                                 collidesGround = true;
                             }},
                             graphite, new FlakBulletType(){{
@@ -98,27 +99,29 @@ public class TestjmodBlocks {
                     limitRange();
                 }};
                 vitis = new ItemTurret("vitis"){{
-                    requirements(Category.turret, with( Items.graphite, 95, silicon, 50, titanium, 20));
+                    requirements(Category.turret, with( Items.graphite, 50, silicon, 20, titanium, 10));
                     ammo(
                             graphite, new ArtilleryBulletType(){{
                                 speed = 3f;
                                 height = width = 9;
-                                damage = 18;
+                                damage = 20;
                                 splashDamage = 20f;
-                                splashDamageRadius = 70f;
+                                splashDamageRadius = 65f;
                                 hitEffect = Fx.flakExplosionBig;
                                 collidesGround = true;
                                 collidesAir = true;
+                                hitSound = Sounds.explosion;
                             }},
                             thorium, new ArtilleryBulletType(){{
                                 speed = 2.5f;
                                 height = width = 10;
-                                damage = 24;
+                                damage = 26;
                                 splashDamage = 38f;
-                                splashDamageRadius = 55f;
+                                splashDamageRadius = 45f;
                                 hitEffect = Fx.flakExplosionBig;
                                 collidesGround = true;
                                 collidesAir = true;
+                                hitSound = Sounds.explosion;
                             }}
                     );
 
@@ -138,7 +141,7 @@ public class TestjmodBlocks {
                     inaccuracy = 16f;
                     shootCone = 30f;
                     shake = 0.8f;
-                    shootSound = Sounds.shootBig;
+                    shootSound = Sounds.sap;
                     ammoUseEffect = Fx.casing2;
                     ammoEjectBack = 4.5f;
                     health = 750;
@@ -151,7 +154,7 @@ public class TestjmodBlocks {
                         parts.add(new RegionPart("-side"){{
                             x = 5;
                             y = 5;
-                            progress = PartProgress.smoothReload;
+                            progress = PartProgress.recoil;
                             moveRot = -8f;
                             mirror = true;
                             under = true;
