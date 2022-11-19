@@ -156,7 +156,7 @@ public class TestjmodBlocks {
                             mirror = true;
                             under = true;
 
-                            moves.add(new PartMove(PartProgress.recoil, 0, -2f, -10));
+                            moves.add(new PartMove(PartProgress.recoil, 0, -2f, -15));
                         }});
                     }};
 
