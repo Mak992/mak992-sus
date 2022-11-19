@@ -90,7 +90,7 @@ public class TestjmodBlocks {
                     inaccuracy = 1f;
                     shootCone = 0.1f;
                     ammoUseEffect = Fx.casing1;
-                    health = 240;
+                    health = 180;
                     rotateSpeed = 6f;
                     coolant = consumeCoolant(0.15f);
                     researchCostMultiplier = 0.06f;
@@ -98,7 +98,7 @@ public class TestjmodBlocks {
                     limitRange();
                 }};
                 vitis = new ItemTurret("vitis"){{
-                    requirements(Category.turret, with( Items.graphite, 75, Items.titanium, 50));
+                    requirements(Category.turret, with( Items.graphite, 95, silicon, 50, titanium, 20));
                     ammo(
                             graphite, new ArtilleryBulletType(){{
                                 speed = 3f;
@@ -141,7 +141,7 @@ public class TestjmodBlocks {
                     shootSound = Sounds.shootBig;
                     ammoUseEffect = Fx.casing2;
                     ammoEjectBack = 4.5f;
-                    health = 900;
+                    health = 750;
                     size = 2;
                     rotateSpeed = 3.5f;
                     coolant = consumeCoolant(0.12f);
