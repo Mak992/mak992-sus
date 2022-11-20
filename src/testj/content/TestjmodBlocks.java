@@ -13,6 +13,9 @@ import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.defense.turrets.ItemTurret;
 import mindustry.world.draw.DrawTurret;
 
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 import static mindustry.content.Items.*;
 import static mindustry.type.ItemStack.with;
 
@@ -104,9 +107,11 @@ public class TestjmodBlocks {
                             graphite, new ArtilleryBulletType(){{
                                 speed = 3f;
                                 height = width = 9;
-                                damage = 20;
-                                splashDamage = 20f;
+                                damage = 4;
+                                splashDamage = 8f;
                                 splashDamageRadius = 65f;
+                                homingRange = 90f;
+                                homingPower = 0.07f;
                                 hitEffect = Fx.flakExplosionBig;
                                 collidesGround = true;
                                 collidesAir = true;
@@ -115,9 +120,11 @@ public class TestjmodBlocks {
                             thorium, new ArtilleryBulletType(){{
                                 speed = 2.5f;
                                 height = width = 10;
-                                damage = 26;
-                                splashDamage = 38f;
+                                damage = 9;
+                                splashDamage = 14f;
                                 splashDamageRadius = 45f;
+                                homingRange = 80f;
+                                homingPower = 0.1f;
                                 hitEffect = Fx.flakExplosionBig;
                                 collidesGround = true;
                                 collidesAir = true;
@@ -128,8 +135,8 @@ public class TestjmodBlocks {
                     consumePower(0.5f);
 
                     shoot = new ShootSine(){{
-                        scl = 20;
-                        mag = 15f;
+                        scl = 6f;
+                        mag = 30f;
                         shots = 5;
                         shotDelay = 7f;
                     }};
