@@ -16,6 +16,7 @@ import mindustry.entities.part.*;
 import mindustry.entities.pattern.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
+import mindustry.content.Items;
 import mindustry.type.*;
 import mindustry.type.ammo.*;
 import mindustry.type.unit.*;
@@ -28,6 +29,33 @@ import static arc.math.Angles.*;
 import static mindustry.Vars.*;
 
 public class TestjmodUnitTypes {
+    public static UnitType Car,
+    //cars
+    rota;
 
-    public static @EntityDef({Unitc.class, Carc.class}) UnitType rota;
+    public static void load() {
+        rota = new TankUnitType("rota") {
+            {
+                float unitRange = 20 * tilesize;
+                health = 240;
+                armor = 1;
+                hitSize = 15;
+
+                speed = 4f;
+                accel = 0.04f;
+                rotateSpeed = 1.8f;
+                ammoType = new ItemAmmoType(Items.coal);
+
+                range = unitRange;
+                maxRange = unitRange;
+
+                treadFrames = 9;
+                treadPullOffset = 4;
+                treadRects = new Rect[]{
+                        // 0
+                        new Rect(8 - 128 / 2f, 48 - 240 / 2f, 27, 142)
+                };
+            };
+        };
+    }
 }
