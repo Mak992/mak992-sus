@@ -2,9 +2,11 @@ package testj.content;
 
 import mindustry.content.Fx;
 import mindustry.content.Items;
-import mindustry.entities.bullet.*;
+import mindustry.entities.bullet.ArtilleryBulletType;
+import mindustry.entities.bullet.FlakBulletType;
 import mindustry.entities.part.RegionPart;
-import mindustry.entities.pattern.*;
+import mindustry.entities.pattern.ShootSine;
+import mindustry.entities.pattern.ShootSpread;
 import mindustry.gen.Sounds;
 import mindustry.graphics.Pal;
 import mindustry.type.Category;
@@ -12,9 +14,6 @@ import mindustry.world.Block;
 import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.defense.turrets.ItemTurret;
 import mindustry.world.draw.DrawTurret;
-
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 import static mindustry.content.Items.*;
 import static mindustry.type.ItemStack.with;
