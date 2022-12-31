@@ -2,7 +2,7 @@ displayName: "Testjmod"
 
 name: "testj"
 
-author: "susi"
+author: "Mak992, Nezerit6(assist)"
 
 main: "testj.Testjmod"
 
@@ -10,7 +10,7 @@ main: "testj.Testjmod"
 description: "A sus Mindustry Java mod"
 
 #the mod version
-version: 1.0
+version: 1.1
 
 #the minimum game build required to run this mod
 minGameVersion: 140.1

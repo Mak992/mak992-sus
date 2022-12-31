@@ -28,6 +28,7 @@ public class TestjmodBlocks {
 
     public static void load() {
         int wallHealthMultiplier = 4;
+
         testWall = new Wall("test-wall") {
             {
                 size = 1;

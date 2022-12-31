@@ -8,6 +8,7 @@ import mindustry.game.EventType;
 import mindustry.mod.Mod;
 import mindustry.ui.dialogs.BaseDialog;
 import testj.content.TestjmodBlocks;
+import testj.content.TestjmodUnits;
 
 public class Testjmod extends Mod{
 
@@ -34,7 +35,7 @@ public class Testjmod extends Mod{
         Log.info("Loading some ci content.");
 
         TestjmodBlocks.load();
-
+        TestjmodUnits.load();
     }
 
 }
